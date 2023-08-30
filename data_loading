@@ -1,0 +1,44 @@
+import pandas as pd
+
+# giving or definig column names based on number of columns in my dataset
+column_names = [
+    'Subject identifier',
+    'Jitter1',
+    'Jitter2',
+    'Jitter3',
+    'Jitter4',
+    'Jitter5',
+    'Shimmer1',
+    'Shimmer2',
+    'Shimmer3',
+    'Shimmer4',
+    'Shimmer5',
+    'Shimmer6',
+    'Harmonicity1',
+    'Harmonicity2',
+    'Harmonicity3',
+    'Pitch1',
+    'Pitch2',
+    'Pitch3',
+    'Pitch4',
+    'Pitch5',
+    'Pulse1',
+    'Pulse2',
+    'Pulse3',
+    'Pulse4',
+    'Voice1',
+    'Voice2',
+    'Voice3',
+    'UPDRS',
+    'PD indicator'
+]
+
+# loading Txt dataset file using column names
+data = pd.read_csv('po1_data.txt', sep=',', header=None, names=column_names)
+
+
+# saveing in CSV file
+data.to_csv('po1_data.csv', index=False)
+
+# just print a sample of the DataFrame to verify
+print(data.head())
